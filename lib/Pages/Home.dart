@@ -20,12 +20,13 @@ class Home extends StatelessWidget {
         backgroundColor: Get.theme.colorScheme.primary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(title, style: TextStyle(color: Colors.white, fontSize: Get.width * 0.05),),
+        title: Text(
+          title,
+          style: TextStyle(color: Colors.white, fontSize: Get.width * 0.05),
+        ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          color: Color(0xff254D70)
-        ),
+        decoration: BoxDecoration(color: Color(0xff254D70)),
         padding: EdgeInsets.all(5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +45,7 @@ class Home extends StatelessWidget {
                   "${controller.displayText}",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: Get.width * 0.07,
+                    fontSize: Get.width * 0.06,
                   ),
                 ),
               ),
@@ -67,40 +68,126 @@ class Home extends StatelessWidget {
                         },
                         name: 'CE',
                       ),
-                      calButton(onPressed: null, name: 'C'),
-                      calButton(onPressed: null, name: 'x'),
+                      calButton(
+                        onPressed: () {
+                          controller.clear();
+                        },
+                        name: 'C',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('*');
+                        },
+                        name: 'x',
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                      calButton(onPressed: () => {}, name: '7'),
-                      calButton(onPressed: null, name: '8'),
-                      calButton(onPressed: null, name: '9'),
-                      calButton(onPressed: null, name: '/'),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('7');
+                        },
+                        name: '7',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('8');
+                        },
+                        name: '8',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('9');
+                        },
+                        name: '9',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('/');
+                        },
+                        name: '/',
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                      calButton(onPressed: () => {}, name: '4'),
-                      calButton(onPressed: null, name: '5'),
-                      calButton(onPressed: null, name: '6'),
-                      calButton(onPressed: null, name: '-'),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('4');
+                        },
+                        name: '4',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('5');
+                        },
+                        name: '5',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('6');
+                        },
+                        name: '6',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('-');
+                        },
+                        name: '-',
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                      calButton(onPressed: () => {}, name: '1'),
-                      calButton(onPressed: null, name: '2'),
-                      calButton(onPressed: null, name: '3'),
-                      calButton(onPressed: null, name: '+'),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('1');
+                        },
+                        name: '1',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('2');
+                        },
+                        name: '2',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('3');
+                        },
+                        name: '3',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('+');
+                        },
+                        name: '+',
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                      calButton(onPressed: () => {}, name: '.'),
-                      calButton(onPressed: null, name: '0'),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('.');
+                        },
+                        name: '.',
+                      ),
+                      calButton(
+                        onPressed: () {
+                          controller.textPrint('0');
+                        },
+                        name: '0',
+                      ),
                       // calButton(onPressed: null, name: '3'),
-                      calButton(onPressed: null, flex: 2, name: '='),
+                      calButton(
+                        onPressed: () {
+                          controller.equal();
+                        },
+                        flex: 2,
+                        name: '=',
+                      ),
                     ],
                   ),
                 ],
